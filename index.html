@@ -1,13 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/pointer.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Raganowicz</title>
-</head>
-<body>
-    <div id="wrapper"></div>
+  </head>
+  <body>
+    <!--Cursor-->
+    <audio loop id="audio">
+      <source src="audio/apoapsis.wav" type="audio/wav" />
+      Your browser does not support the audio element.
+    </audio>
+    <div class="options">
+      <div id="navigation-desktop" class="navigation">
+        <svg
+          style="width: 1.5em; height: 1.5em;"
+          viewBox="0 0 24 24"
+          id="audio-mute"
+          class="mute"
+          onclick="muteAudio()"
+          type="button"
+        >
+          <path
+            fill="currentColor"
+            d="M14,3.23V5.29C16.89,6.15 19,8.83 19,12C19,15.17 16.89,17.84 14,18.7V20.77C18,19.86 21,16.28 21,12C21,7.72 18,4.14 14,3.23M16.5,12C16.5,10.23 15.5,8.71 14,7.97V16C15.5,15.29 16.5,13.76 16.5,12M3,9V15H7L12,20V4L7,9H3Z"
+          />
+        </svg>
+        <svg
+          style="width: 1.5em; height: 1.5em;"
+          viewBox="0 0 24 24"
+          id="audio-play"
+          onclick="playAudio()"
+          type="button"
+        >
+          <path
+            fill="currentColor"
+            d="M12,4L9.91,6.09L12,8.18M4.27,3L3,4.27L7.73,9H3V15H7L12,20V13.27L16.25,17.53C15.58,18.04 14.83,18.46 14,18.7V20.77C15.38,20.45 16.63,19.82 17.68,18.96L19.73,21L21,19.73L12,10.73M19,12C19,12.94 18.8,13.82 18.46,14.64L19.97,16.15C20.62,14.91 21,13.5 21,12C21,7.72 18,4.14 14,3.23V5.29C16.89,6.15 19,8.83 19,12M16.5,12C16.5,10.23 15.5,8.71 14,7.97V10.18L16.45,12.63C16.5,12.43 16.5,12.21 16.5,12Z"
+          />
+        </svg>
+      </div>
+      <div id="movePagination" class="movePagination" data-slide-speed="7">
+        <div class="pagination">
+          <span id="pagination-num">1 — 4</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="scroll-container" class="scroll-container">
+      <div id="home" class="wrapper wrapper-1">
+        <div class="container">
+          <!--Layer 1-->
+          <div id="layer1" class="layer layer1" data-scroll-speed="8">
+            <img
+              id="l1-shadow"
+              class="shadow l1-shadow"
+              src="images/shadow.png"
+              alt="There should be an image - if you can read this text, check your connection"
+            />
+            <img
+              id="l1-img"
+              class="img l1-img"
+              src="images/lay1.png"
+              alt="There should be an image - if you can read this text, check your connection"
+            />
+          </div>
+          <!--Layer 2-->
+          <div id="layer2" class="layer layer2" data-scroll-speed="6.5">
+            <img
+              id="l2-shadow"
+              class="shadow l2-shadow"
+              src="images/shadow.png"
+              alt="There should be an image - if you can read this text, check your connection"
+            />
+            <img
+              id="l2-img"
+              class="img l2-img"
+              src="images/lay2.png"
+              alt="There should be an image - if you can read this text, check your connection"
+            />
+          </div>
+          <!--Layer 3-->
+          <div id="layer3" class="layer layer3" data-scroll-speed="5">
+            <img
+              id="l3-shadow"
+              class="shadow l3-shadow"
+              src="images/shadow.png"
+              alt="There should be an image - if you can read this text, check your connection"
+            />
+            <img
+              id="l3-color"
+              class="color l3-color"
+              src="images/color3.png"
+              alt="There should be an image - if you can read this text, check your connection"
+            />
+            <img
+              id="l3-img"
+              class="img l3-img"
+              src="images/lay3.png"
+              alt="There should be an image - if you can read this text, check your connection"
+            />
+          </div>
+          <!--Layer 4-->
+          <div id="layer4" class="layer layer4" data-scroll-speed="4">
+            <img
+              id="l4-shadow"
+              class="shadow l4-shadow"
+              src="images/shadow.png"
+              alt="There should be an image - if you can read this text, check your connection"
+            />
+            <img
+              id="l4-color"
+              class="color l4-color"
+              src="images/color4.png"
+              alt="There should be an image - if you can read this text, check your connection"
+            />
+            <img
+              id="l4-img"
+              class="img l4-img"
+              src="images/lay4.png"
+              alt="There should be an image - if you can read this text, check your connection"
+            />
+          </div>
+          <div id="w1-background" class="background"></div>
+        </div>
+      </div>
+      <div id="about" class="wrapper wrapper-2">
+        <div class="roof">
+          <!--Roof 1-->
+          <div id="roof1" class="layer roof1">
+            <img
+              id="r1-shadow"
+              class="shadow r1-shadow"
+              src="images/roof1-shadow.png"
+              alt="There should be an image - if you can read this text, check your connection"
+            />
+            <img
+              id="r1-img"
+              class="img r1-img"
+              src="images/roof1.png"
+              alt="There should be an image - if you can read this text, check your connection"
+            />
+          </div>
+          <!--Roof 2-->
+          <div id="roof2" class="layer roof2" data-scroll-speed="7">
+            <img
+              id="r2-shadow"
+              class="shadow r2-shadow"
+              src="images/roof2-shadow.png"
+              alt="There should be an image - if you can read this text, check your connection"
+            />
+            <img
+              id="r2-img"
+              class="img r2-img"
+              src="images/roof2.png"
+              alt="There should be an image - if you can read this text, check your connection"
+            />
+          </div>
+          <!--Roof 3-->
+          <div id="roof3" class="layer roof3" data-scroll-speed="5">
+            <img
+              id="r3-shadow"
+              class="shadow r3-shadow"
+              src="images/roof3-shadow.png"
+              alt="There should be an image - if you can read this text, check your connection"
+            />
+            <img
+              id="r3-img"
+              class="img r3-img"
+              src="images/roof3.png"
+              alt="There should be an image - if you can read this text, check your connection"
+            />
+          </div>
+        </div>
+        <div class="container room">
+          <div class="text">
+            <h2 id="about-title" data-slide-speed="-15">
+              Hello,<br />I'm Piotr
+            </h2>
+            <div id="inner-text" class="inner-text">
+              <div id="about-text" class="about-text" data-slide-speed="-15">
+                I graduated Theatrology and Performance Studies from
+                Jagiellonian University in Krakow and praticipated Front-End
+                Course. At the beggining of the year I discovered UX/UI design
+                and totally got hooked, trying do my best - fusing my knowledge
+                about art, performance and front-end technology. I'm still
+                learning and willing to explore new technologies. I'm creative,
+                open-minded and determined to do whatever it is I'm doing.
+                Looking for first full-time job, which would create new
+                challanges, and help me grow with experienced specialists.
+                Except for design, I love art, living history, english football
+                and LEGO.
+              </div>
+            </div>
+          </div>
+          <img
+            class="image-window"
+            src="images/window.png"
+            alt="There should be an image - if you can read this text, check your connection"
+          />
+        </div>
+      </div>
+      <div id="projects" class="wrapper wrapper-3">
+        <h1 id="projects-title" class="proj-el" data-scroll-speed="5">
+          Projects
+        </h1>
+        <div class="projects-container">
+          <span class="proj-el">01</span>
+          <h1 class="project proj1 proj-el" data-image='project1'>L'Aquila</h1>
+          <span class="proj-el">02</span>
+          <h1 class="project proj2 proj-el" data-image='project2'>Leftlover</h1>
+          <span class="proj-el">++</span>
+          <h2 class="proj-el">More soon...</h2>
+          <div id="project-image" class="project-image"></div>
+        </div>
+      </div>
+      <div id="contact" class="wrapper wrapper-4"></div>
+    </div>
     <script src="script/index.js"></script>
-</body>
+    <script src="script/moveElement.js"></script>
+    <script src="script/navigation.js"></script>
+    <script src="script/audio.js"></script>
+    <script src="script/pointer.js"></script>
+    <script>
+      init_pointer({
+        ringSize: 35,
+        ringClickSize: 30,
+      });
+    </script>
+  </body>
 </html>
