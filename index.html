@@ -4,11 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style/style.css" />
-    <link rel="stylesheet" href="style/pointer.css" />
+    <link rel="shortcut icon" href="images/letter.png" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Raganowicz</title>
   </head>
   <body>
+    <div id="loader" class="loader">
+      <div class="loader-counter">
+        <span>0</span>
+      </div>
+    </div>
+    <div class="mobile">
+      <div>Mobile cooming soon...</div>
+      <img src="images/frame1.png" alt="Image with main screen" />
+      <a href="https://www.x-kom.pl/g-6/c/15-monitory.html"><div class='btn-get-screen'>Get the real screen</div></a>
+    </div>
     <!--Cursor-->
     <audio loop id="audio">
       <source src="audio/apoapsis.wav" type="audio/wav" />
@@ -124,6 +134,14 @@
               alt="There should be an image - if you can read this text, check your connection"
             />
           </div>
+          <div id="layer5" class="layer layer5" data-scroll-speed="3">
+            <img
+              id="l5-img"
+              class="img l5-img"
+              src="images/lay5.png"
+              alt="There should be an image - if you can read this text, check your connection"
+            />
+          </div>
           <div id="w1-background" class="background"></div>
         </div>
       </div>
@@ -182,14 +200,15 @@
             </h2>
             <div id="inner-text" class="inner-text">
               <div id="about-text" class="about-text" data-slide-speed="-15">
-                I graduated Theatrology and Performance Studies from
-                Jagiellonian University in Krakow and praticipated Front-End
-                Course. At the beggining of the year I discovered UX/UI design
-                and totally got hooked, trying do my best - fusing my knowledge
-                about art, performance and front-end technology. I'm still
-                learning and willing to explore new technologies. I'm creative,
-                open-minded and determined to do whatever it is I'm doing.
-                Looking for first full-time job, which would create new
+                I like observing people and I wonder what I can do to help solve
+                their problems and how to make the world a better place. I
+                graduated Theatrology and Performance Studies from Jagiellonian
+                University in Krakow and praticipated Front-End Course. I'm
+                begginer UX/UI designer, trying do my best - fusing my knowledge
+                about people, art, performance and front-end technology. I'm
+                still learning and willing to explore new technologies. I'm
+                creative, open-minded and determined to do whatever it is I'm
+                doing. Looking for full-time job, which would create new
                 challanges, and help me grow with experienced specialists.
                 Except for design, I love art, living history, english football
                 and LEGO.
@@ -209,15 +228,77 @@
         </h1>
         <div class="projects-container">
           <span class="proj-el">01</span>
-          <h1 class="project proj1 proj-el" data-image='project1'>L'Aquila</h1>
+          <a
+            href="https://www.behance.net/gallery/100590643/laquila"
+            target="_blank"
+            ><h1 class="project proj1 proj-el" data-image="project1">
+              L'Aquila
+            </h1></a
+          >
           <span class="proj-el">02</span>
-          <h1 class="project proj2 proj-el" data-image='project2'>Leftlover</h1>
+          <a
+            href="https://www.behance.net/gallery/100590643/laquila"
+            target="_blank"
+            ><h1 class="project proj2 proj-el" data-image="project2">
+              Leftlover
+            </h1></a
+          >
           <span class="proj-el">++</span>
           <h2 class="proj-el">More soon...</h2>
-          <div id="project-image" class="project-image"></div>
+          <div id="project-image" class="project-image">
+            <img
+              id="project-img-in"
+              src="images/project1.png"
+              alt="Image of project"
+            />
+          </div>
         </div>
       </div>
-      <div id="contact" class="wrapper wrapper-4"></div>
+      <div id="contact" class="wrapper wrapper-4 contact">
+        <div id="thank-message" class="thank-you">
+          <h2>Thank you for the message,</h2>
+          <span id="answer-soon"
+            ><h3>I'll answer soon<span class="red-dot">.</span></h3>
+          </span>
+        </div>
+        <form id="jquery_form">
+          <div class="contact-line con1">
+            <h3>
+              Can we do something together?
+            </h3>
+          </div>
+          <div id="line-email" class="contact-line con2">
+            <h3 id="type-email">
+              Type your email
+            </h3>
+            <input id="email" name="email" />
+            <h3>,</h3>
+          </div>
+          <div id="line-subject" class="contact-line con3">
+            <h3 id="type-subject">
+              subject
+            </h3>
+            <input id="subject" name="subject" />
+            <h3>and</h3>
+          </div>
+          <div id="line-message" class="contact-line con4">
+            <h3 id="type-message">
+              leave the message
+            </h3>
+            <input id="message" name="text" />
+            <h3>.</h3>
+          </div>
+          <div id="line-submit" class="contact-line con5">
+            <h3>Then</h3>
+            <button id="submit-btn" name="send">Submit</button>
+          </div>
+        </form>
+      </div>
+      <footer>
+        <div class="icon behance"></div>
+        <div class="icon linkedin"></div>
+        <div class="icon dribbble"></div>
+      </footer>
     </div>
     <script src="script/index.js"></script>
     <script src="script/moveElement.js"></script>
