@@ -169,6 +169,7 @@ $("#submit-btn").on("click", function (event) {
     send();
   }
 });
+//console.log()
 // let $form = $("#" + form_id);
 // $form.submit(function (event) {
   
