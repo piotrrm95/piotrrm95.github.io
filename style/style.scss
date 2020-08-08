@@ -68,7 +68,7 @@ h2 {
 .mobile {
   font-size: 24px;
   position: fixed;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -463,6 +463,18 @@ input:-webkit-autofill:active {
   opacity: 1;
   transition: visibility 0s, opacity 0.5s linear;
 }
+#jquery_form *{
+font-size: 20px;
+letter-spacing: 0.15px;
+}
+#line-submit{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.input-line{
+  display: -webkit-box;
+}
 .thank-you {
   z-index:5;
   position: absolute;
@@ -471,7 +483,6 @@ input:-webkit-autofill:active {
   transition: visibility 0s, opacity 0.5s linear;
 }
 .contact-line {
-  display: -webkit-box;
   justify-content: space-between;
   align-items: baseline;
   overflow: hidden;
@@ -482,11 +493,6 @@ h3 {
   display: table-row;
   text-align-last: justify;
   width: 100%;
-}
-.con3 {
-  input {
-    width: 100%;
-  }
 }
 .con5 {
   button {
@@ -540,6 +546,7 @@ h3 {
   border-radius: 100px;
   z-index: 8000;
   pointer-events: none;
+  visibility: hidden;
 }
 *{
   cursor: none !important;
@@ -562,10 +569,20 @@ a {
   .room {
     flex-direction: row;
   }
+  #jquery_form *{
+    font-size: 34px;
+    letter-spacing: 0.15px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    }
 }
 @media (min-width: 992px) and (orientation: landscape) {
   .mobile {
     display: none;
+  }
+  #pointer-ring {
+    visibility: visible;
   }
 }
 
