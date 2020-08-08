@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 * {
   -webkit-box-sizing: border-box;
@@ -48,22 +48,68 @@ html {
   /* make scrollbar transparent */
 }
 
+a {
+  text-decoration: none;
+}
+
 h1,
-h2 {
+h2,
+h3,
+input,
+button {
   color: white;
   font-style: italic;
   font-family: "Playfair Display", serif;
-  font-weight: 500;
+  font-weight: 400 !important;
 }
 
 h1 {
-  font-size: 97px;
+  font-size: 61px;
   letter-spacing: -1.5px;
 }
 
+h3,
+input,
+button {
+  font-size: 34px;
+  letter-spacing: 0px;
+}
+
 h2 {
-  font-size: 61px;
+  font-size: 48px;
   letter-spacing: -0.5px;
+}
+
+.mobile {
+  font-size: 24px;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  z-index: 4000;
+}
+
+.mobile img {
+  width: 80%;
+  height: auto;
+}
+
+.mobile .btn-get-screen {
+  font-size: 48px;
+  text-decoration: underline;
 }
 
 .mute {
@@ -96,6 +142,34 @@ h2 {
   margin-top: 50%;
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
+}
+
+.loader {
+  background: white;
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  z-index: 9000;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: visibility 0s, opacity 1s linear;
+  transition: visibility 0s, opacity 1s linear;
+}
+
+.loader .loader-counter span {
+  position: absolute;
+  -webkit-transform: translate(-50%, -70%);
+          transform: translate(-50%, -70%);
+  color: black;
 }
 
 .wrapper {
@@ -284,6 +358,16 @@ h2 {
   width: 133vw;
 }
 
+.layer5 {
+  z-index: 5;
+  bottom: -50%;
+  left: -11%;
+}
+
+.l5-img {
+  width: 100vw;
+}
+
 .roof {
   margin-top: -5%;
 }
@@ -355,7 +439,8 @@ h2 {
           align-items: center;
 }
 
-.projects-container span, .projects-container h1,
+.projects-container span,
+.projects-container h1,
 .projects-container h2 {
   font-style: normal;
   margin: 0;
@@ -370,14 +455,20 @@ h2 {
   opacity: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url(../images/project1.png);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: contain;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   z-index: 1;
+}
+
+#project-img-in {
+  height: 90%;
+  width: auto;
 }
 
 .project {
@@ -423,6 +514,198 @@ h2 {
   transition: 0s;
 }
 
+.contact {
+  position: relative;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.contact h1,
+.contact h2,
+.contact h3,
+.contact input {
+  color: black;
+  margin: 0;
+}
+
+.contact input {
+  text-indent: 5px;
+  border: none;
+  font-style: italic;
+  outline: none;
+  border-bottom: 2px solid #ef6351;
+}
+
+.contact h1,
+.contact h2,
+.contact h3 {
+  font-style: normal;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 100px white inset !important;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black;
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black;
+  opacity: 1;
+  /* Firefox */
+}
+
+::-ms-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black;
+  opacity: 1;
+  /* Firefox */
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black;
+  opacity: 1;
+  /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: black;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: black;
+}
+
+#jquery_form {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: visibility 0s, opacity 0.5s linear;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.thank-you {
+  z-index: 5;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: visibility 0s, opacity 0.5s linear;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.contact-line {
+  display: -webkit-box;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  overflow: hidden;
+}
+
+h3 {
+  text-align: justify;
+  display: table-row;
+  text-align-last: justify;
+  width: 100%;
+}
+
+.con3 input {
+  width: 100%;
+}
+
+.con5 button {
+  outline: none;
+  border: none;
+  background: none;
+  color: black;
+}
+
+.red-dot {
+  color: #ef6351 !important;
+}
+
+#answer-soon {
+  text-align-last: left;
+}
+
+#submit-btn {
+  border-bottom: 2px solid #ef6351;
+}
+
+#submit-btn:hover {
+  background-color: black;
+  color: white;
+  -webkit-transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+  transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
+}
+
+/* 
+    This CSS file was created by OwL for use by pointer.js, 
+     witch can be found on https://seattleowl.com. 
+*/
+#pointer-dot {
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  mix-blend-mode: exclusion;
+  position: fixed;
+  z-index: 8000;
+  pointer-events: none;
+  -webkit-transition: border-color 0.5s;
+  transition: border-color 0.5s;
+}
+
+#pointer-ring {
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  padding: 15px;
+  background-color: white;
+  mix-blend-mode: exclusion;
+  position: fixed;
+  border-radius: 100px;
+  z-index: 8000;
+  pointer-events: none;
+}
+
+* {
+  cursor: none !important;
+}
+
+html {
+  cursor: none !important;
+}
+
+a {
+  cursor: none !important;
+}
+
 @media only screen and (min-width: 768px) {
   .layer1 {
     bottom: 168px;
@@ -436,8 +719,11 @@ h2 {
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  .active {
-    border-bottom: 2px solid red;
+}
+
+@media (min-width: 992px) and (orientation: landscape) {
+  .mobile {
+    display: none;
   }
 }
 /*# sourceMappingURL=style.css.map */

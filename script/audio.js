@@ -15,13 +15,13 @@ function playAudio() {
   
 window.onload = function () {
   let isInteraction = false;
-  window.addEventListener("mouseover", handleInteraction);
+  window.addEventListener("mousedown", handleInteraction);
   function handleInteraction(){
       isInteraction=true;
       if(isInteraction==true){
         playAudio();
     }
-      window.removeEventListener("mouseover",handleInteraction);
+      window.removeEventListener("mousedown",handleInteraction);
   }
  
 };
