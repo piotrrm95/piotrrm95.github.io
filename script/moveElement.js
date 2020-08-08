@@ -139,7 +139,8 @@ function send() {
 
   return false;
 }
-$("#submit-btn").on("click", function () {
+$("#submit-btn").on("click", function (event) {
+  event.preventDefault();
   email = $("#email").val();
   subject = $("#subject").val();
   message = $("#message").val();
@@ -168,10 +169,10 @@ $("#submit-btn").on("click", function () {
     send();
   }
 });
-let $form = $("#" + form_id);
-$form.submit(function (event) {
-  event.preventDefault();
-});
+// let $form = $("#" + form_id);
+// $form.submit(function (event) {
+  
+// });
 
 //preloader
 $(document).ready(function () {
