@@ -83,9 +83,7 @@ h2 {
 .mobile {
   font-size: 24px;
   position: fixed;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -606,6 +604,28 @@ input:-webkit-autofill:active {
   transition: visibility 0s, opacity 0.5s linear;
 }
 
+#jquery_form * {
+  font-size: 20px;
+  letter-spacing: 0.15px;
+}
+
+#line-submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.input-line {
+  display: -webkit-box;
+}
+
 .thank-you {
   z-index: 5;
   position: absolute;
@@ -616,7 +636,6 @@ input:-webkit-autofill:active {
 }
 
 .contact-line {
-  display: -webkit-box;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -630,10 +649,6 @@ h3 {
   text-align: justify;
   display: table-row;
   text-align-last: justify;
-  width: 100%;
-}
-
-.con3 input {
   width: 100%;
 }
 
@@ -692,6 +707,7 @@ h3 {
   border-radius: 100px;
   z-index: 8000;
   pointer-events: none;
+  visibility: hidden;
 }
 
 * {
@@ -719,11 +735,25 @@ a {
         -ms-flex-direction: row;
             flex-direction: row;
   }
+  #jquery_form * {
+    font-size: 34px;
+    letter-spacing: 0.15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    text-align: center;
+  }
 }
 
 @media (min-width: 992px) and (orientation: landscape) {
   .mobile {
     display: none;
+  }
+  #pointer-ring {
+    visibility: visible;
   }
 }
 /*# sourceMappingURL=style.css.map */
