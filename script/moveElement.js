@@ -15,12 +15,12 @@ $.fn.moveIt = function () {
         inst.update(scrollTop);
       });
       //color layers
-      if (scrollTop > scrollHeight / 1.8) {
+      if (scrollTop > scrollHeight) {
         $("#l4-color").fadeIn(1);
       } else {
         $("#l4-color").fadeOut(1);
       }
-      if (scrollTop > scrollHeight / 1.6) {
+      if (scrollTop > scrollHeight) {
         $("#l3-color").fadeIn(1);
       } else {
         $("#l3-color").fadeOut(1);
@@ -139,7 +139,8 @@ function send() {
 
   return false;
 }
-$("#submit-btn").on("click", function () {
+$("#submit-btn").on("click", function (event) {
+  event.preventDefault();
   email = $("#email").val();
   subject = $("#subject").val();
   message = $("#message").val();
@@ -168,10 +169,11 @@ $("#submit-btn").on("click", function () {
     send();
   }
 });
-let $form = $("#" + form_id);
-$form.submit(function (event) {
-  event.preventDefault();
-});
+//console.log()
+// let $form = $("#" + form_id);
+// $form.submit(function (event) {
+  
+// });
 
 //preloader
 $(document).ready(function () {
