@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fauna+One&display=swap');
 $red: #ef6351;
 * {
   box-sizing: border-box;
@@ -27,7 +28,7 @@ html {
   background-color: white;
   font-size: 16px;
   letter-spacing: 0.5px;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Fauna One', serif;
   color: white;
 }
 html {
@@ -155,22 +156,22 @@ h2 {
 //wrapper 2
 
 .wrapper-2 {
-  height: auto;
+  height: 100vh;
   z-index: 5;
   .image-window {
-    max-width: 100%;
-    height: auto;
+   width: auto;
+    height: 100vh;
   }
 }
 
 //wrapper 3
 .wrapper-3 {
   height: 100vh;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  z-index: 5;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // flex-direction: column;
   background-color: #000000;
 }
 
@@ -199,9 +200,9 @@ h2 {
   background-color: black;
   align-items: center;
   justify-content: flex-end;
-  h2 {
+  #about-title {
+    left: 60%;
     z-index: 22;
-    margin-left: -150px;
     position: absolute;
     mix-blend-mode: difference;
     margin-top: -100px;
@@ -219,7 +220,7 @@ h2 {
   width: 50%;
   color: white;
   position: relative;
-  margin-bottom: -1000px;
+  margin-bottom: -150%;
 }
 .about-text {
   z-index: 21;
@@ -298,7 +299,6 @@ h2 {
 .l5-img{
     width: 100vw;
 }
-
 //roof 1
 .roof {
   margin-top: -5%;
@@ -332,19 +332,20 @@ h2 {
 .r3-shadow {
   opacity: 0.5;
 }
-#projects {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+// #projects {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
 #projects-title {
   mix-blend-mode: exclusion;
-  position: absolute;
-  z-index: 3;
+  z-index: 22;
 }
 .projects-container {
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   flex-direction: column;
   align-items: center;
   span,
@@ -362,12 +363,12 @@ h2 {
   width: 100vw;
   height: 100vh;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
   z-index: 1;
 }
 #project-img-in {
-  height: 90%;
+  height: 60%;
   width: auto;
 }
 .project {

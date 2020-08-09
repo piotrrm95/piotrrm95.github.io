@@ -15,12 +15,12 @@ $.fn.moveIt = function () {
         inst.update(scrollTop);
       });
       //color layers
-      if (scrollTop > scrollHeight / 1.8) {
+      if (scrollTop > scrollHeight) {
         $("#l4-color").fadeIn(1);
       } else {
         $("#l4-color").fadeOut(1);
       }
-      if (scrollTop > scrollHeight / 1.6) {
+      if (scrollTop > scrollHeight) {
         $("#l3-color").fadeIn(1);
       } else {
         $("#l3-color").fadeOut(1);
