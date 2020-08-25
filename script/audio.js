@@ -12,17 +12,3 @@ function playAudio() {
     play.style.display = "block";
     mute.style.display = "none";
   }
-  
-window.onload = function () {
-  let isInteraction = false;
-  window.addEventListener("mousedown", handleInteraction);
-  function handleInteraction(){
-      isInteraction=true;
-      if(isInteraction==true){
-        playAudio();
-    }
-      window.removeEventListener("mousedown",handleInteraction);
-  }
- 
-};
-
