@@ -4,8 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style/style.css" />
-    <link rel="shortcut icon" href="images/letter.png" />
+    <link rel="shortcut icon" href="images/favicon.png" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 1919466, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
     <title>Raganowicz</title>
     <script>
     (function(h,o,t,j,a,r){
@@ -25,11 +40,11 @@
       </div>
     </div>
     <div class="mobile">
-      <div>Mobile cooming soon...</div>
-      <img src="images/frame1.png" alt="Image with main screen" />
-      <a href="https://www.x-kom.pl/g-6/c/15-monitory.html"
-        ><div class="btn-get-screen">Get the real screen</div></a
-      >
+      <img src="images/frame.png" alt="Picture with screen">
+      <div>—mobile soon, sorry—</div>
+    </div>
+    <div class="scroll-icon" id="scrollIcon">
+      <img src="images/scroll.png" alt="Scroll icon" />
     </div>
     <!--Cursor-->
     <audio loop id="audio">
@@ -42,7 +57,7 @@
           style="width: 1.5em; height: 1.5em;"
           viewBox="0 0 24 24"
           id="audio-mute"
-          class="mute"
+          class="audio-icon mute"
           onclick="muteAudio()"
           type="button"
         >
@@ -55,6 +70,7 @@
           style="width: 1.5em; height: 1.5em;"
           viewBox="0 0 24 24"
           id="audio-play"
+          class="audio-icon"
           onclick="playAudio()"
           type="button"
         >
@@ -74,8 +90,25 @@
     <div id="scroll-container" class="scroll-container">
       <div id="home" class="wrapper wrapper-1">
         <div class="container">
+          <!--Birds-->
+          <div id="birds" class="layer birds">
+            <img
+              id="birds-img"
+              src="images/birds.gif"
+              alt="There should be an image - if you can read this text, check your connection"
+            />
+          </div>
+          <!--Stars-->
+          <div id="stars" class="layer stars">
+            <img
+              id="stars-img"
+              src="images/stars.png"
+              alt="There should be an image - if you can read this text, check your connection"
+            />
+          </div>
+
           <!--Layer 1-->
-          <div id="layer1" class="layer layer1" data-scroll-speed="8">
+          <div id="layer1" class="layer city layer1" data-scroll-speed="8">
             <img
               id="l1-shadow"
               class="shadow l1-shadow"
@@ -90,7 +123,7 @@
             />
           </div>
           <!--Layer 2-->
-          <div id="layer2" class="layer layer2" data-scroll-speed="6.5">
+          <div id="layer2" class="layer city layer2" data-scroll-speed="6.5">
             <img
               id="l2-shadow"
               class="shadow l2-shadow"
@@ -105,7 +138,7 @@
             />
           </div>
           <!--Layer 3-->
-          <div id="layer3" class="layer layer3" data-scroll-speed="5">
+          <div id="layer3" class="layer city layer3" data-scroll-speed="5">
             <img
               id="l3-shadow"
               class="shadow l3-shadow"
@@ -126,7 +159,7 @@
             />
           </div>
           <!--Layer 4-->
-          <div id="layer4" class="layer layer4" data-scroll-speed="4">
+          <div id="layer4" class="layer city layer4" data-scroll-speed="4">
             <img
               id="l4-shadow"
               class="shadow l4-shadow"
@@ -146,11 +179,11 @@
               alt="There should be an image - if you can read this text, check your connection"
             />
           </div>
-          <div id="layer5" class="layer layer5" data-scroll-speed="3">
+          <div id="layer5" class="layer city layer5" data-scroll-speed="3">
             <img
               id="l5-img"
               class="img l5-img"
-              src="images/lay5.png"
+              src="images/color3.png"
               alt="There should be an image - if you can read this text, check your connection"
             />
           </div>
@@ -219,7 +252,7 @@
           >
           <span class="proj-el">02</span>
           <a
-            href="https://www.behance.net/gallery/100590643/laquila"
+            href="https://www.behance.net/gallery/102489707/leftlover"
             target="_blank"
             ><h1 class="project proj2 proj-el" data-image="project2">
               Leftlover
@@ -230,7 +263,7 @@
           <div id="project-image" class="project-image">
             <img
               id="project-img-in"
-              src="images/project1.png"
+              src="images/project1.jpg"
               alt="Image of project"
             />
           </div>
@@ -244,26 +277,32 @@
             </h1>
             <div id="inner-text" class="inner-text">
               <div id="about-text" class="about-text" data-slide-speed="-15">
-                I like observing people and I wonder what I can do to help solve
-                their problems and how to make the world a better place. I
-                graduated Theatrology and Performance Studies from Jagiellonian
-                University in Krakow and praticipated Front-End Course. I'm
-                begginer UX/UI designer, trying do my best - fusing my knowledge
-                about people, art, performance and front-end technology. I'm
-                still learning and willing to explore new technologies. I'm
-                creative, open-minded and determined to do whatever it is I'm
-                doing. Looking for full-time job, which would create new
-                challanges, and help me grow with experienced specialists.
-                Except for design, I love art, living history, english football
-                and LEGO.
+                I like observing people and wonder how I can help to solve their
+                problems and how to make the world a better place. I am a
+                beginner UX / UI designer. I graduated Theatrology and
+                Performance Studies, and participated Front End Course. In my
+                work, I try to fuse my knowledge about people, art, performance
+                and the front end. I am looking for creative work and new
+                challenges that will give me a chance to develop and learn from
+                experienced specialists.
               </div>
             </div>
           </div>
-          <img
-            class="image-window"
-            src="images/window.png"
-            alt="There should be an image - if you can read this text, check your connection"
-          />
+          <div class="window">
+            <img
+              class="image-window"
+              src="images/window.png"
+              alt="There should be an image - if you can read this text, check your connection"
+            />
+            <!--Portrait-->
+            <div id="portrait" class="portrait">
+              <img
+                id="portrait-img"
+                src="images/portrait.gif"
+                alt="There should be an image - if you can read this text, check your connection"
+              />
+            </div>
+          </div>
         </div>
       </div>
       <div id="contact" class="wrapper wrapper-4 contact">
@@ -311,18 +350,30 @@
             <button id="submit-btn" name="send">Submit</button>
           </div>
         </form>
+        <div class="links">
+          <a href="https://www.behance.net/raganowicz" target="blank"
+            ><img
+              class="icon-link"
+              src="images/behance-round.svg"
+              alt="icon-behance"
+          /></a>
+          <a href="https://www.linkedin.com/in/raganowicz/" target="blank"
+            ><img
+              class="icon-link"
+              src="images/linkedin-round.svg"
+              alt="icon-behance"
+          /></a>
+          <a href="https://dribbble.com/raganowicz" target="blank"
+            ><img
+              class="icon-link"
+              src="images/dribble-round.svg"
+              alt="icon-behance"
+          /></a>
+        </div>
       </div>
-      <footer>
-        <div class="icon behance"></div>
-        <div class="icon linkedin"></div>
-        <div class="icon dribbble"></div>
-      </footer>
     </div>
     <script src="script/index.js"></script>
-    <script src="script/moveElement.js"></script>
-    <script src="script/navigation.js"></script>
-    <script src="script/audio.js"></script>
-    <script src="script/pointer.js"></script>
+    <script async src="script/audio.js"></script>
     <script>
       init_pointer({
         ringSize: 35,

@@ -35,7 +35,7 @@ html {
   background-color: white;
   font-size: 16px;
   letter-spacing: 0.5px;
-  font-family: 'Fauna One', serif;
+  font-family: "Fauna One", serif;
   color: white;
 }
 
@@ -58,6 +58,7 @@ h2,
 h3,
 input,
 button {
+  opacity: 87%;
   color: white;
   font-style: italic;
   font-family: "Playfair Display", serif;
@@ -82,9 +83,10 @@ h2 {
 }
 
 .mobile {
-  font-size: 24px;
   position: fixed;
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -113,6 +115,26 @@ h2 {
 
 .mute {
   display: none;
+}
+
+.scroll-icon {
+  z-index: 3000;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  bottom: 20px;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: visibility 0.4s, opacity 0.5s linear;
+  transition: visibility 0.4s, opacity 0.5s linear;
 }
 
 .options {
@@ -147,9 +169,7 @@ h2 {
   background: white;
   height: 100vh;
   width: 100vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -193,11 +213,6 @@ h2 {
   z-index: 5;
 }
 
-.wrapper-2 .image-window {
-  width: auto;
-  height: 100vh;
-}
-
 .wrapper-3 {
   height: 100vh;
   z-index: 5;
@@ -211,6 +226,7 @@ h2 {
 }
 
 .room {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -277,6 +293,8 @@ h2 {
 .about-text {
   z-index: 21;
   padding-left: 10px;
+  opacity: 70%;
+  line-height: 150%;
 }
 
 .img {
@@ -297,6 +315,81 @@ h2 {
 .color {
   z-index: 2;
   display: none;
+}
+
+/* Fluid */
+@-webkit-keyframes move-1 {
+  to {
+    margin-left: 100%;
+  }
+}
+@keyframes move-1 {
+  to {
+    margin-left: 100%;
+  }
+}
+
+#birds {
+  z-index: 2;
+  top: 10%;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: move-1;
+          animation-name: move-1;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  margin-left: -400px;
+}
+
+#birds-img {
+  width: 20%;
+}
+
+#stars {
+  z-index: 1;
+}
+
+#stars-img {
+  width: 100vw;
+}
+
+.window {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.image-window {
+  position: relative;
+  width: auto;
+  height: 100vh;
+  z-index: 2;
+}
+
+#portrait {
+  position: absolute;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  bottom: 25%;
+}
+
+#portrait-img {
+  width: 50%;
+  height: auto;
 }
 
 .layer1 {
@@ -346,12 +439,13 @@ h2 {
 
 .layer5 {
   z-index: 5;
-  bottom: -50%;
-  left: -11%;
+  bottom: -80%;
+  right: -15%;
 }
 
 .l5-img {
-  width: 100vw;
+  width: 200vw;
+  height: auto;
 }
 
 .roof {
@@ -655,6 +749,49 @@ h3 {
   transition: all 0.5s cubic-bezier(0.55, 0, 0.1, 1);
 }
 
+.links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.links a {
+  position: relative;
+  margin: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.icon-link {
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+.icon-link:hover {
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
 /* 
     This CSS file was created by OwL for use by pointer.js, 
      witch can be found on https://seattleowl.com. 
@@ -731,6 +868,11 @@ a {
   }
   #pointer-ring {
     visibility: visible;
+  }
+  .loader {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 /*# sourceMappingURL=style.css.map */
